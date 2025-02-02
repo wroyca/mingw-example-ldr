@@ -1,0 +1,8 @@
+libs =
+#import libs += libhello%lib{hello}
+
+exe{hello}: {hxx ixx txx cxx}{**} $libs testscript
+exe{hello}: ldscripts/ld{i686-w64-mingw32-g++}: include = adhoc
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+cxx.loptions =+ "-Wl,--large-address-aware,--script=$src_base/ldscripts/i686-w64-mingw32-g++.ld"
