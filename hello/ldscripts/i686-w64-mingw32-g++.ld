@@ -11,9 +11,9 @@ SECTIONS
   . = SIZEOF_HEADERS;
   . = ALIGN(__section_alignment__);
 
-  .__mana __image_base__ + (__section_alignment__ < 0x1000 ? . : __section_alignment__):
+  .__hello __image_base__ + (__section_alignment__ < 0x1000 ? . : __section_alignment__):
   {
-    . = 0xc3b6c40; *(.__mana); /* Aligning to nearest 0x1000 boundary for 0x00401000*/
+    . = 0xc3b6c40; *(.__hello); /* Aligning to nearest 0x1000 boundary for 0x00401000*/
   }
 
   /*
